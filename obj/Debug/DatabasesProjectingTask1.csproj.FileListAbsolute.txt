@@ -1,0 +1,11 @@
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\bin\Debug\DatabasesProjectingTask1.exe.config
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\bin\Debug\Model\CDdatabase.mdf
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\bin\Debug\Model\CDdatabase_log.ldf
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\bin\Debug\DatabasesProjectingTask1.exe
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\bin\Debug\DatabasesProjectingTask1.pdb
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.csprojResolveAssemblyReference.cache
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.MainForm.resources
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.Properties.Resources.resources
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.csproj.GenerateResource.Cache
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.exe
+c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.pdb
