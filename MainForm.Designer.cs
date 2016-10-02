@@ -39,6 +39,7 @@
             this.GetAllLabelsButton = new System.Windows.Forms.Button();
             this.DeleteRowButton = new System.Windows.Forms.Button();
             this.TryInsertButton = new System.Windows.Forms.Button();
+            this.GetAllPerformances = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,7 +89,7 @@
             // 
             this.GetAllArtistButton.Location = new System.Drawing.Point(13, 13);
             this.GetAllArtistButton.Name = "GetAllArtistButton";
-            this.GetAllArtistButton.Size = new System.Drawing.Size(135, 23);
+            this.GetAllArtistButton.Size = new System.Drawing.Size(93, 23);
             this.GetAllArtistButton.TabIndex = 5;
             this.GetAllArtistButton.Text = "Get all artists";
             this.GetAllArtistButton.UseVisualStyleBackColor = true;
@@ -96,9 +97,9 @@
             // 
             // GetAllAlbumsButton
             // 
-            this.GetAllAlbumsButton.Location = new System.Drawing.Point(154, 13);
+            this.GetAllAlbumsButton.Location = new System.Drawing.Point(112, 13);
             this.GetAllAlbumsButton.Name = "GetAllAlbumsButton";
-            this.GetAllAlbumsButton.Size = new System.Drawing.Size(112, 23);
+            this.GetAllAlbumsButton.Size = new System.Drawing.Size(83, 23);
             this.GetAllAlbumsButton.TabIndex = 6;
             this.GetAllAlbumsButton.Text = "Get all albums";
             this.GetAllAlbumsButton.UseVisualStyleBackColor = true;
@@ -106,9 +107,9 @@
             // 
             // GetAllSongsButton
             // 
-            this.GetAllSongsButton.Location = new System.Drawing.Point(272, 12);
+            this.GetAllSongsButton.Location = new System.Drawing.Point(201, 12);
             this.GetAllSongsButton.Name = "GetAllSongsButton";
-            this.GetAllSongsButton.Size = new System.Drawing.Size(109, 23);
+            this.GetAllSongsButton.Size = new System.Drawing.Size(91, 23);
             this.GetAllSongsButton.TabIndex = 7;
             this.GetAllSongsButton.Text = "Get all songs";
             this.GetAllSongsButton.UseVisualStyleBackColor = true;
@@ -116,9 +117,9 @@
             // 
             // GetAllLabelsButton
             // 
-            this.GetAllLabelsButton.Location = new System.Drawing.Point(387, 13);
+            this.GetAllLabelsButton.Location = new System.Drawing.Point(298, 13);
             this.GetAllLabelsButton.Name = "GetAllLabelsButton";
-            this.GetAllLabelsButton.Size = new System.Drawing.Size(108, 23);
+            this.GetAllLabelsButton.Size = new System.Drawing.Size(101, 23);
             this.GetAllLabelsButton.TabIndex = 8;
             this.GetAllLabelsButton.Text = "Get all labels";
             this.GetAllLabelsButton.UseVisualStyleBackColor = true;
@@ -144,11 +145,22 @@
             this.TryInsertButton.UseVisualStyleBackColor = true;
             this.TryInsertButton.Click += new System.EventHandler(this.TryInsertButton_Click);
             // 
+            // GetAllPerformances
+            // 
+            this.GetAllPerformances.Location = new System.Drawing.Point(406, 12);
+            this.GetAllPerformances.Name = "GetAllPerformances";
+            this.GetAllPerformances.Size = new System.Drawing.Size(88, 23);
+            this.GetAllPerformances.TabIndex = 11;
+            this.GetAllPerformances.Text = "Get all perf";
+            this.GetAllPerformances.UseVisualStyleBackColor = true;
+            this.GetAllPerformances.Click += new System.EventHandler(this.GetAllPerformances_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 364);
+            this.Controls.Add(this.GetAllPerformances);
             this.Controls.Add(this.TryInsertButton);
             this.Controls.Add(this.DeleteRowButton);
             this.Controls.Add(this.GetAllLabelsButton);
@@ -181,6 +193,7 @@
         private System.Windows.Forms.Button GetAllLabelsButton;
         private System.Windows.Forms.Button DeleteRowButton;
         private System.Windows.Forms.Button TryInsertButton;
+        private System.Windows.Forms.Button GetAllPerformances;
     }
 }
 

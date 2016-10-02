@@ -55,6 +55,13 @@ namespace DatabasesProjectingTask1
             MainGrid.DataSource = labels;
         }
 
+        private void GetAllPerformances_Click(object sender, EventArgs e)
+        {
+            DataTable performances = sqlWorker.Performances;
+            currentDataTable = performances;
+            MainGrid.DataSource = performances;
+        }
+
         private void GetAlbumsByArtistButton_Click(object sender, EventArgs e)
         {
             string artist = GetAlbumsByArtistTextBox.Text;
@@ -98,5 +105,7 @@ namespace DatabasesProjectingTask1
                 insertForm.Show();
             }
         }
+
+      
     }
 }

@@ -22,6 +22,7 @@ namespace DatabasesProjectingTask1
 
         public DataTable Labels { get { return GetTableByName("Labels", "*"); } }
 
+        public DataTable Performances { get { return GetTableByName("Performances", "*"); } }
 
         public string[] TablesNames
         {

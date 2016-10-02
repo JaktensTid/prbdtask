@@ -1,12 +1,13 @@
-﻿INSERT INTO Artists (Name,Genre)
+﻿
+ INSERT INTO Labels(Name)
 VALUES
- ('Perturbator','Synthwave'),
- ('Mega Drive', 'New retro wave');
+ ('Blood Music'),
+ ('NewRetroWaveRec');
 
- INSERT INTO Labels(Name,Artist)
+INSERT INTO Artists (Name,Genre, Label)
 VALUES
- ('Blood Music', 'Perturbator'),
- ('NewRetroWaveRec', 'Mega Drive');
+ ('Perturbator','Synthwave', 'Blood Music'),
+ ('Mega Drive', 'New retro wave', 'NewRetroWaveRec');
 
  INSERT INTO Albums(Name,Duration, Artist)
 VALUES
@@ -21,3 +22,7 @@ VALUES
  ('Acid Spit', 120 ,'Mega Drive', 2),
  ('Infiltrate', 145 ,'Mega Drive', 2),
  ('NARC', 294, 'Mega Drive', 2);
+INSERT INTO Performances(Artist,PerformanceName, PerformanceDate)
+VALUES
+ ('Perturbator', 'Burning Man', 24/07/2017),
+ ('Mega Drive', 'Burning Man',24/07/2017);

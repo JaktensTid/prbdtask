@@ -109,6 +109,7 @@
     <Content Include="SqlScripts\CreateAlbumsTable.sql" />
     <Content Include="SqlScripts\CreateArtistsTable.sql" />
     <Content Include="SqlScripts\CreateLabelsTable.sql" />
+    <Content Include="SqlScripts\CreatePerformancesTable.sql" />
     <Content Include="SqlScripts\CreateTracksTable.sql" />
     <Content Include="SqlScripts\FillTables.sql" />
   </ItemGroup>
