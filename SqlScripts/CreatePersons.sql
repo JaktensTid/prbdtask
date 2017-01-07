@@ -1,0 +1,7 @@
+﻿CREATE TABLE Persons(
+ID INTEGER PRIMARY KEY,
+FirstName TEXT NOT NULL,
+LastName TEXT NOT NULL,
+CompanyName TEXT,
+FOREIGN KEY (CompanyName) REFERENCES Companies(Name)
+);

@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.MainGrid = new System.Windows.Forms.DataGridView();
-            this.GetAlbumsByArtistButton = new System.Windows.Forms.Button();
-            this.GetAlbumsByArtistTextBox = new System.Windows.Forms.TextBox();
-            this.GetSongsByAlbumButton = new System.Windows.Forms.Button();
-            this.GetSongsByAlbumTextBox = new System.Windows.Forms.TextBox();
-            this.GetAllArtistButton = new System.Windows.Forms.Button();
-            this.GetAllAlbumsButton = new System.Windows.Forms.Button();
-            this.GetAllSongsButton = new System.Windows.Forms.Button();
-            this.GetAllLabelsButton = new System.Windows.Forms.Button();
+            this.GetCompaniesByCandyButton = new System.Windows.Forms.Button();
+            this.GetCompaniesByCandyTextBox = new System.Windows.Forms.TextBox();
+            this.GetCompanyByPersonButton = new System.Windows.Forms.Button();
+            this.GetCompanyByPersonTextBox = new System.Windows.Forms.TextBox();
+            this.AddressesButton = new System.Windows.Forms.Button();
+            this.CandiesButton = new System.Windows.Forms.Button();
+            this.CompaniesButton = new System.Windows.Forms.Button();
+            this.FactoriesButton = new System.Windows.Forms.Button();
             this.DeleteRowButton = new System.Windows.Forms.Button();
             this.TryInsertButton = new System.Windows.Forms.Button();
-            this.GetAllPerformances = new System.Windows.Forms.Button();
+            this.PersonsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.MainGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,88 +48,88 @@
             this.MainGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MainGrid.Location = new System.Drawing.Point(12, 42);
             this.MainGrid.Name = "MainGrid";
-            this.MainGrid.Size = new System.Drawing.Size(482, 241);
+            this.MainGrid.Size = new System.Drawing.Size(633, 241);
             this.MainGrid.TabIndex = 0;
             // 
-            // GetAlbumsByArtistButton
+            // GetCompaniesByCandyButton
             // 
-            this.GetAlbumsByArtistButton.Location = new System.Drawing.Point(12, 289);
-            this.GetAlbumsByArtistButton.Name = "GetAlbumsByArtistButton";
-            this.GetAlbumsByArtistButton.Size = new System.Drawing.Size(157, 28);
-            this.GetAlbumsByArtistButton.TabIndex = 1;
-            this.GetAlbumsByArtistButton.Text = "Get albums by artist";
-            this.GetAlbumsByArtistButton.UseVisualStyleBackColor = true;
-            this.GetAlbumsByArtistButton.Click += new System.EventHandler(this.GetAlbumsByArtistButton_Click);
+            this.GetCompaniesByCandyButton.Location = new System.Drawing.Point(12, 289);
+            this.GetCompaniesByCandyButton.Name = "GetCompaniesByCandyButton";
+            this.GetCompaniesByCandyButton.Size = new System.Drawing.Size(157, 28);
+            this.GetCompaniesByCandyButton.TabIndex = 1;
+            this.GetCompaniesByCandyButton.Text = "Get companies by candy";
+            this.GetCompaniesByCandyButton.UseVisualStyleBackColor = true;
+            this.GetCompaniesByCandyButton.Click += new System.EventHandler(this.GetCompaniesByCandyType);
             // 
-            // GetAlbumsByArtistTextBox
+            // GetCompaniesByCandyTextBox
             // 
-            this.GetAlbumsByArtistTextBox.Location = new System.Drawing.Point(175, 294);
-            this.GetAlbumsByArtistTextBox.Name = "GetAlbumsByArtistTextBox";
-            this.GetAlbumsByArtistTextBox.Size = new System.Drawing.Size(187, 20);
-            this.GetAlbumsByArtistTextBox.TabIndex = 2;
+            this.GetCompaniesByCandyTextBox.Location = new System.Drawing.Point(175, 294);
+            this.GetCompaniesByCandyTextBox.Name = "GetCompaniesByCandyTextBox";
+            this.GetCompaniesByCandyTextBox.Size = new System.Drawing.Size(237, 20);
+            this.GetCompaniesByCandyTextBox.TabIndex = 2;
             // 
-            // GetSongsByAlbumButton
+            // GetCompanyByPersonButton
             // 
-            this.GetSongsByAlbumButton.Location = new System.Drawing.Point(12, 323);
-            this.GetSongsByAlbumButton.Name = "GetSongsByAlbumButton";
-            this.GetSongsByAlbumButton.Size = new System.Drawing.Size(157, 28);
-            this.GetSongsByAlbumButton.TabIndex = 3;
-            this.GetSongsByAlbumButton.Text = "Get songs by album";
-            this.GetSongsByAlbumButton.UseVisualStyleBackColor = true;
-            this.GetSongsByAlbumButton.Click += new System.EventHandler(this.GetSongsByAlbumButton_Click);
+            this.GetCompanyByPersonButton.Location = new System.Drawing.Point(12, 323);
+            this.GetCompanyByPersonButton.Name = "GetCompanyByPersonButton";
+            this.GetCompanyByPersonButton.Size = new System.Drawing.Size(157, 28);
+            this.GetCompanyByPersonButton.TabIndex = 3;
+            this.GetCompanyByPersonButton.Text = "Get company by person";
+            this.GetCompanyByPersonButton.UseVisualStyleBackColor = true;
+            this.GetCompanyByPersonButton.Click += new System.EventHandler(this.GetCompanyByPerson);
             // 
-            // GetSongsByAlbumTextBox
+            // GetCompanyByPersonTextBox
             // 
-            this.GetSongsByAlbumTextBox.Location = new System.Drawing.Point(175, 328);
-            this.GetSongsByAlbumTextBox.Name = "GetSongsByAlbumTextBox";
-            this.GetSongsByAlbumTextBox.Size = new System.Drawing.Size(187, 20);
-            this.GetSongsByAlbumTextBox.TabIndex = 4;
+            this.GetCompanyByPersonTextBox.Location = new System.Drawing.Point(175, 328);
+            this.GetCompanyByPersonTextBox.Name = "GetCompanyByPersonTextBox";
+            this.GetCompanyByPersonTextBox.Size = new System.Drawing.Size(237, 20);
+            this.GetCompanyByPersonTextBox.TabIndex = 4;
             // 
-            // GetAllArtistButton
+            // AddressesButton
             // 
-            this.GetAllArtistButton.Location = new System.Drawing.Point(13, 13);
-            this.GetAllArtistButton.Name = "GetAllArtistButton";
-            this.GetAllArtistButton.Size = new System.Drawing.Size(93, 23);
-            this.GetAllArtistButton.TabIndex = 5;
-            this.GetAllArtistButton.Text = "Get all artists";
-            this.GetAllArtistButton.UseVisualStyleBackColor = true;
-            this.GetAllArtistButton.Click += new System.EventHandler(this.GetAllArtistButton_Click);
+            this.AddressesButton.Location = new System.Drawing.Point(13, 13);
+            this.AddressesButton.Name = "AddressesButton";
+            this.AddressesButton.Size = new System.Drawing.Size(93, 23);
+            this.AddressesButton.TabIndex = 5;
+            this.AddressesButton.Text = "Addresses";
+            this.AddressesButton.UseVisualStyleBackColor = true;
+            this.AddressesButton.Click += new System.EventHandler(this.GetAllAddresses);
             // 
-            // GetAllAlbumsButton
+            // CandiesButton
             // 
-            this.GetAllAlbumsButton.Location = new System.Drawing.Point(112, 13);
-            this.GetAllAlbumsButton.Name = "GetAllAlbumsButton";
-            this.GetAllAlbumsButton.Size = new System.Drawing.Size(83, 23);
-            this.GetAllAlbumsButton.TabIndex = 6;
-            this.GetAllAlbumsButton.Text = "Get all albums";
-            this.GetAllAlbumsButton.UseVisualStyleBackColor = true;
-            this.GetAllAlbumsButton.Click += new System.EventHandler(this.GetAllAlbumsButton_Click);
+            this.CandiesButton.Location = new System.Drawing.Point(145, 13);
+            this.CandiesButton.Name = "CandiesButton";
+            this.CandiesButton.Size = new System.Drawing.Size(83, 23);
+            this.CandiesButton.TabIndex = 6;
+            this.CandiesButton.Text = "Candies";
+            this.CandiesButton.UseVisualStyleBackColor = true;
+            this.CandiesButton.Click += new System.EventHandler(this.GetAllCandyTypes);
             // 
-            // GetAllSongsButton
+            // CompaniesButton
             // 
-            this.GetAllSongsButton.Location = new System.Drawing.Point(201, 12);
-            this.GetAllSongsButton.Name = "GetAllSongsButton";
-            this.GetAllSongsButton.Size = new System.Drawing.Size(91, 23);
-            this.GetAllSongsButton.TabIndex = 7;
-            this.GetAllSongsButton.Text = "Get all songs";
-            this.GetAllSongsButton.UseVisualStyleBackColor = true;
-            this.GetAllSongsButton.Click += new System.EventHandler(this.GetAllSongsButton_Click);
+            this.CompaniesButton.Location = new System.Drawing.Point(271, 13);
+            this.CompaniesButton.Name = "CompaniesButton";
+            this.CompaniesButton.Size = new System.Drawing.Size(91, 23);
+            this.CompaniesButton.TabIndex = 7;
+            this.CompaniesButton.Text = "Companies";
+            this.CompaniesButton.UseVisualStyleBackColor = true;
+            this.CompaniesButton.Click += new System.EventHandler(this.GetAllCompanies);
             // 
-            // GetAllLabelsButton
+            // FactoriesButton
             // 
-            this.GetAllLabelsButton.Location = new System.Drawing.Point(298, 13);
-            this.GetAllLabelsButton.Name = "GetAllLabelsButton";
-            this.GetAllLabelsButton.Size = new System.Drawing.Size(101, 23);
-            this.GetAllLabelsButton.TabIndex = 8;
-            this.GetAllLabelsButton.Text = "Get all labels";
-            this.GetAllLabelsButton.UseVisualStyleBackColor = true;
-            this.GetAllLabelsButton.Click += new System.EventHandler(this.GetAllLabelsButton_Click);
+            this.FactoriesButton.Location = new System.Drawing.Point(403, 13);
+            this.FactoriesButton.Name = "FactoriesButton";
+            this.FactoriesButton.Size = new System.Drawing.Size(101, 23);
+            this.FactoriesButton.TabIndex = 8;
+            this.FactoriesButton.Text = "Factories";
+            this.FactoriesButton.UseVisualStyleBackColor = true;
+            this.FactoriesButton.Click += new System.EventHandler(this.GetAllFactores);
             // 
             // DeleteRowButton
             // 
-            this.DeleteRowButton.Location = new System.Drawing.Point(419, 289);
+            this.DeleteRowButton.Location = new System.Drawing.Point(527, 291);
             this.DeleteRowButton.Name = "DeleteRowButton";
-            this.DeleteRowButton.Size = new System.Drawing.Size(75, 23);
+            this.DeleteRowButton.Size = new System.Drawing.Size(118, 23);
             this.DeleteRowButton.TabIndex = 9;
             this.DeleteRowButton.Text = "Delete row";
             this.DeleteRowButton.UseVisualStyleBackColor = true;
@@ -137,40 +137,40 @@
             // 
             // TryInsertButton
             // 
-            this.TryInsertButton.Location = new System.Drawing.Point(419, 318);
+            this.TryInsertButton.Location = new System.Drawing.Point(527, 325);
             this.TryInsertButton.Name = "TryInsertButton";
-            this.TryInsertButton.Size = new System.Drawing.Size(75, 23);
+            this.TryInsertButton.Size = new System.Drawing.Size(118, 23);
             this.TryInsertButton.TabIndex = 10;
             this.TryInsertButton.Text = "Try insert";
             this.TryInsertButton.UseVisualStyleBackColor = true;
             this.TryInsertButton.Click += new System.EventHandler(this.TryInsertButton_Click);
             // 
-            // GetAllPerformances
+            // PersonsButton
             // 
-            this.GetAllPerformances.Location = new System.Drawing.Point(406, 12);
-            this.GetAllPerformances.Name = "GetAllPerformances";
-            this.GetAllPerformances.Size = new System.Drawing.Size(88, 23);
-            this.GetAllPerformances.TabIndex = 11;
-            this.GetAllPerformances.Text = "Get all perf";
-            this.GetAllPerformances.UseVisualStyleBackColor = true;
-            this.GetAllPerformances.Click += new System.EventHandler(this.GetAllPerformances_Click);
+            this.PersonsButton.Location = new System.Drawing.Point(540, 12);
+            this.PersonsButton.Name = "PersonsButton";
+            this.PersonsButton.Size = new System.Drawing.Size(105, 23);
+            this.PersonsButton.TabIndex = 11;
+            this.PersonsButton.Text = "Persons";
+            this.PersonsButton.UseVisualStyleBackColor = true;
+            this.PersonsButton.Click += new System.EventHandler(this.GetAllPersons);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 364);
-            this.Controls.Add(this.GetAllPerformances);
+            this.ClientSize = new System.Drawing.Size(657, 364);
+            this.Controls.Add(this.PersonsButton);
             this.Controls.Add(this.TryInsertButton);
             this.Controls.Add(this.DeleteRowButton);
-            this.Controls.Add(this.GetAllLabelsButton);
-            this.Controls.Add(this.GetAllSongsButton);
-            this.Controls.Add(this.GetAllAlbumsButton);
-            this.Controls.Add(this.GetAllArtistButton);
-            this.Controls.Add(this.GetSongsByAlbumTextBox);
-            this.Controls.Add(this.GetSongsByAlbumButton);
-            this.Controls.Add(this.GetAlbumsByArtistTextBox);
-            this.Controls.Add(this.GetAlbumsByArtistButton);
+            this.Controls.Add(this.FactoriesButton);
+            this.Controls.Add(this.CompaniesButton);
+            this.Controls.Add(this.CandiesButton);
+            this.Controls.Add(this.AddressesButton);
+            this.Controls.Add(this.GetCompanyByPersonTextBox);
+            this.Controls.Add(this.GetCompanyByPersonButton);
+            this.Controls.Add(this.GetCompaniesByCandyTextBox);
+            this.Controls.Add(this.GetCompaniesByCandyButton);
             this.Controls.Add(this.MainGrid);
             this.Name = "MainForm";
             this.Text = "Working with database";
@@ -183,17 +183,17 @@
         #endregion
 
         private System.Windows.Forms.DataGridView MainGrid;
-        private System.Windows.Forms.Button GetAlbumsByArtistButton;
-        private System.Windows.Forms.TextBox GetAlbumsByArtistTextBox;
-        private System.Windows.Forms.Button GetSongsByAlbumButton;
-        private System.Windows.Forms.TextBox GetSongsByAlbumTextBox;
-        private System.Windows.Forms.Button GetAllArtistButton;
-        private System.Windows.Forms.Button GetAllAlbumsButton;
-        private System.Windows.Forms.Button GetAllSongsButton;
-        private System.Windows.Forms.Button GetAllLabelsButton;
+        private System.Windows.Forms.Button GetCompaniesByCandyButton;
+        private System.Windows.Forms.TextBox GetCompaniesByCandyTextBox;
+        private System.Windows.Forms.Button GetCompanyByPersonButton;
+        private System.Windows.Forms.TextBox GetCompanyByPersonTextBox;
+        private System.Windows.Forms.Button AddressesButton;
+        private System.Windows.Forms.Button CandiesButton;
+        private System.Windows.Forms.Button CompaniesButton;
+        private System.Windows.Forms.Button FactoriesButton;
         private System.Windows.Forms.Button DeleteRowButton;
         private System.Windows.Forms.Button TryInsertButton;
-        private System.Windows.Forms.Button GetAllPerformances;
+        private System.Windows.Forms.Button PersonsButton;
     }
 }
 

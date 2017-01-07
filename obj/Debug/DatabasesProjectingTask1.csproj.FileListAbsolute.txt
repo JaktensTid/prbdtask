@@ -9,3 +9,20 @@ c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\ob
 c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.csproj.GenerateResource.Cache
 c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.exe
 c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\obj\Debug\DatabasesProjectingTask1.pdb
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\DatabasesProjectingTask1.exe.config
+E:\Program Files (x86)\Visual Studio projects\prbdtask\obj\Debug\DatabasesProjectingTask1.exe
+E:\Program Files (x86)\Visual Studio projects\prbdtask\obj\Debug\DatabasesProjectingTask1.pdb
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\DatabasesProjectingTask1.exe
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\DatabasesProjectingTask1.pdb
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\EntityFramework.dll
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\EntityFramework.SqlServer.dll
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\System.Data.SQLite.dll
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\EntityFramework.xml
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\EntityFramework.SqlServer.xml
+E:\Program Files (x86)\Visual Studio projects\prbdtask\bin\Debug\System.Data.SQLite.xml
+E:\Program Files (x86)\Visual Studio projects\prbdtask\obj\Debug\DatabasesProjectingTask1.csprojResolveAssemblyReference.cache
+E:\Program Files (x86)\Visual Studio projects\prbdtask\obj\Debug\DatabasesProjectingTask1.MainForm.resources
+E:\Program Files (x86)\Visual Studio projects\prbdtask\obj\Debug\DatabasesProjectingTask1.Properties.Resources.resources
+E:\Program Files (x86)\Visual Studio projects\prbdtask\obj\Debug\DatabasesProjectingTask1.csproj.GenerateResource.Cache

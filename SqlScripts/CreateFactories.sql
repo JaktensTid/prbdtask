@@ -1,0 +1,9 @@
+﻿CREATE TABLE Factories
+(
+ID INTEGER PRIMARY KEY,
+CompanyName TEXT,
+Addr TEXT NOT NULL,
+Country TEXT NOT NULL,
+Phone TEXT NOT NULL,
+FOREIGN KEY (CompanyName) REFERENCES Companies(Name)
+);

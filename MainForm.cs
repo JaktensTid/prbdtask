@@ -27,58 +27,65 @@ namespace DatabasesProjectingTask1
             MainGrid.DataSource = table;
         }
 
-        private void GetAllArtistButton_Click(object sender, EventArgs e)
+        private void GetAllAddresses(object sender, EventArgs e)
         {
-            DataTable artists = sqlWorker.Artists;
-            currentDataTable = artists;
-            MainGrid.DataSource = artists;
+            DataTable addresses = sqlWorker.Addresses;
+            currentDataTable = addresses;
+            MainGrid.DataSource = addresses;
         }
 
-        private void GetAllAlbumsButton_Click(object sender, EventArgs e)
+        private void GetAllCandyTypes(object sender, EventArgs e)
         {
-            DataTable albums = sqlWorker.Albums;
-            currentDataTable = albums;
-            MainGrid.DataSource = albums;
+            DataTable candies = sqlWorker.CandyTypes;
+            currentDataTable = candies;
+            MainGrid.DataSource = candies;
         }
 
-        private void GetAllSongsButton_Click(object sender, EventArgs e)
+        private void GetAllCompanies(object sender, EventArgs e)
         {
-            DataTable songs = sqlWorker.Tracks;
-            currentDataTable = songs;
-            MainGrid.DataSource = songs;
+            DataTable companies = sqlWorker.Companies;
+            currentDataTable = companies;
+            MainGrid.DataSource = companies;
         }
 
-        private void GetAllLabelsButton_Click(object sender, EventArgs e)
+        private void GetAllFactores(object sender, EventArgs e)
         {
-            DataTable labels = sqlWorker.Labels;
-            currentDataTable = labels;
-            MainGrid.DataSource = labels;
+            DataTable factories = sqlWorker.Factories;
+            currentDataTable = factories;
+            MainGrid.DataSource = factories;
         }
 
-        private void GetAllPerformances_Click(object sender, EventArgs e)
+        private void GetAllPersons(object sender, EventArgs e)
         {
-            DataTable performances = sqlWorker.Performances;
-            currentDataTable = performances;
-            MainGrid.DataSource = performances;
+            DataTable persons = sqlWorker.Persons;
+            currentDataTable = persons;
+            MainGrid.DataSource = persons;
         }
 
-        private void GetAlbumsByArtistButton_Click(object sender, EventArgs e)
+        private void GetCompaniesByCandyType(object sender, EventArgs e)
         {
-            string artist = GetAlbumsByArtistTextBox.Text;
-            if (artist != null)
+            string candy = GetCompaniesByCandyTextBox.Text;
+            if (candy != null)
             {
-                DataTable albums = sqlWorker.GetAlbumsByArtist(artist);
-                MainGrid.DataSource = albums;
+                DataTable companies = sqlWorker.GetCompaniesByCandyType(candy);
+                MainGrid.DataSource = companies;
             }
         }
 
-        private void GetSongsByAlbumButton_Click(object sender, EventArgs e)
+        private void GetCompanyByPerson(object sender, EventArgs e)
         {
-            string album = GetSongsByAlbumTextBox.Text;
-            if (album != null)
+            string person = GetCompanyByPersonTextBox.Text;
+            if (person != null)
             {
-                DataTable albums = sqlWorker.GetSongsByAlbum(album);
-                MainGrid.DataSource = albums;
+                try
+                {
+                    DataTable company = sqlWorker.GetCompanyByPerson(person);
+                    MainGrid.DataSource = company;
+                }
+                catch(ArgumentException)
+                {
+                    MessageBox.Show("Введите имя и фамилию сотрудника");
+                }
             }
         }
 

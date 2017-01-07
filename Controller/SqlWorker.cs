@@ -1,34 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
+using System.IO;
+using System.Data.SQLite;
 using DatabasesProjectingTask1.Controller;
 
 namespace DatabasesProjectingTask1
 {
     class CDdatabase : IRUDDatabaseWorker
     {
-        private static string connectionString =
-            @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="
-            + '"' +
-            @"c:\users\andre\documents\visual studio 2015\Projects\DatabasesProjectingTask1\Model\CDdatabase.mdf"
-            + '"' + "; Integrated Security = True";
+        private static string dbName = "E://Program Files (x86)/Visual Studio projects/prbdtask/Model/ConfectionaryDatabase.db3";
+        private static string rootPath = "E://Program Files (x86)/Visual Studio projects/prbdtask";
+        static CDdatabase()
+        {
+            string sqlText = "";
+            foreach (var file in Directory.GetFiles(rootPath + "/SqlScripts"))
+            {
+                sqlText += File.ReadAllText(file) + " ";
+            }
+            SQLiteConnection.CreateFile(dbName);
+            SQLiteConnection connection =
+            new SQLiteConnection(string.Format("Data Source={0};", dbName));
+            SQLiteCommand command =
+                new SQLiteCommand(sqlText, connection);
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
 
-        public DataTable Artists { get { return GetTableByName("Artists", "*"); } }
+        public DataTable Addresses { get { return GetTableByName("AddressCandies", "*"); } }
 
-        public DataTable Albums { get { return GetTableByName("Albums", "*"); } }
+        public DataTable CandyTypes { get { return GetTableByName("CandyTypes", "*"); } }
 
-        public DataTable Tracks { get { return GetTableByName("Tracks", "*"); } }
+        public DataTable Companies { get { return GetTableByName("Companies", "*"); } }
 
-        public DataTable Labels { get { return GetTableByName("Labels", "*"); } }
+        public DataTable Factories { get { return GetTableByName("Factories", "*"); } }
 
-        public DataTable Performances { get { return GetTableByName("Performances", "*"); } }
+        public DataTable Persons { get { return GetTableByName("Persons", "*"); } }
 
         public string[] TablesNames
         {
             get
             {
-                using (SqlConnection connection = new SqlConnection(connectionString))
+                using (SQLiteConnection connection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
                 {
                     connection.Open();
                     DataTable schema = connection.GetSchema("Tables");
@@ -48,18 +62,15 @@ namespace DatabasesProjectingTask1
 
             DataTable dataTable = new DataTable();
 
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SQLiteConnection sqlConnection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
             {
-                sqlConnection.ConnectionString = connectionString;
                 sqlConnection.Open();
-                string columns = "";
-
                 string commandString = "SELECT " +
                                        "*" +
                                        " FROM " +
                                        tableName + " ORDER BY ID";
-                SqlCommand command = new SqlCommand(commandString, sqlConnection);
-                using (SqlDataReader reader = command.ExecuteReader())
+                SQLiteCommand command = new SQLiteCommand(commandString, sqlConnection);
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     dataTable.Load(reader);
                 }
@@ -79,9 +90,8 @@ namespace DatabasesProjectingTask1
         {
             DataTable dataTable = new DataTable();
 
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SQLiteConnection sqlConnection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
             {
-                sqlConnection.ConnectionString = connectionString;
                 sqlConnection.Open();
                 string columns = "";
 
@@ -95,8 +105,8 @@ namespace DatabasesProjectingTask1
                                        columns +
                                        " FROM " +
                                        tableName + " ORDER BY ID";
-                SqlCommand command = new SqlCommand(commandString, sqlConnection);
-                using (SqlDataReader reader = command.ExecuteReader())
+                SQLiteCommand command = new SQLiteCommand(commandString, sqlConnection);
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     dataTable.Load(reader);
                 }
@@ -110,9 +120,8 @@ namespace DatabasesProjectingTask1
         {
             DataTable dataTable = new DataTable();
 
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SQLiteConnection sqlConnection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
             {
-                sqlConnection.ConnectionString = connectionString;
                 sqlConnection.Open();
                 string columns = "";
 
@@ -120,8 +129,8 @@ namespace DatabasesProjectingTask1
                                        "*" +
                                        " FROM " +
                                        tableName + " ORDER BY ID";
-                SqlCommand command = new SqlCommand(commandString, sqlConnection);
-                using (SqlDataReader reader = command.ExecuteReader())
+                SQLiteCommand command = new SQLiteCommand(commandString, sqlConnection);
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     dataTable.Load(reader);
                 }
@@ -131,16 +140,15 @@ namespace DatabasesProjectingTask1
             return dataTable;
         }
 
-        private DataTable GetTableByCommand(SqlCommand command)
+        private DataTable GetTableByCommand(SQLiteCommand command)
         {
             DataTable dataTable = new DataTable();
 
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SQLiteConnection sqlConnection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
             {
-                sqlConnection.ConnectionString = connectionString;
                 sqlConnection.Open();
                 command.Connection = sqlConnection;
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     dataTable.Load(reader);
                 }
@@ -148,48 +156,52 @@ namespace DatabasesProjectingTask1
             return dataTable;
         }
 
-        public DataTable GetAlbumsByArtist(string artist)
+        public DataTable GetCompaniesByCandyType(string candy)
         {
-            SqlCommand command = new SqlCommand();
+            SQLiteCommand command = new SQLiteCommand();
             string commandString =
-                "SELECT DISTINCT Albums.Name " +
-                "FROM Albums, Artists " +
-                "WHERE Albums.Artist = (SELECT Name FROM Artists WHERE Name = @0)";
+                "SELECT CompanyName FROM Factories " +
+                "WHERE Addr = " +
+                "(SELECT Addr FROM AddressCandies WHERE Candies = @0)";
             command.CommandText = commandString;
-            command.Parameters.Add(new SqlParameter("0", artist));
+            command.Parameters.Add(new SQLiteParameter("0", candy));
 
             return GetTableByCommand(command);
         }
 
-        public DataTable GetSongsByAlbum(string album)
+        public DataTable GetCompanyByPerson(string firstLastName)
         {
-            SqlCommand command = new SqlCommand();
+            var splited = firstLastName.Split(' ');
+            if(splited.Length != 2)
+            {
+                throw new InvalidOperationException("No data found");
+            }
+            string firstName = splited[0];
+            string lastName = splited[1];
+            SQLiteCommand command = new SQLiteCommand();
             string commandString =
-                "SELECT DISTINCT Tracks.Name, Tracks.Duration " +
-                "FROM Tracks, Albums " +
-                "WHERE Tracks.AlbumID = (SELECT ID FROM Albums WHERE Name = @0)";
+                "SELECT DISTINCT CompanyName FROM Persons WHERE FirstName = @0 AND LastName = @1";
             command.CommandText = commandString;
-            command.Parameters.Add(new SqlParameter("0", album));
+            command.Parameters.Add(new SQLiteParameter("0", firstName));
+            command.Parameters.Add(new SQLiteParameter("1", lastName));
 
             return GetTableByCommand(command);
         }
 
         public void DeleteRow(string tableName, int rowID)
         {
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SQLiteConnection sqlConnection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
             {
-                sqlConnection.ConnectionString = connectionString;
                 sqlConnection.Open();
 
-                SqlCommand deleteRecord = new SqlCommand();
+                SQLiteCommand deleteRecord = new SQLiteCommand();
                 deleteRecord.Connection = sqlConnection;
                 deleteRecord.CommandType = CommandType.Text;
 
                 string sql = "DELETE FROM " + tableName + " WHERE ID = " + rowID;
 
-                SqlParameter RowParameter = new SqlParameter();
+                SQLiteParameter RowParameter = new SQLiteParameter();
                 RowParameter.ParameterName = "@RowID";
-                RowParameter.SqlDbType = SqlDbType.Int;
                 RowParameter.IsNullable = false;
                 RowParameter.Value = rowID;
 
@@ -208,12 +220,11 @@ namespace DatabasesProjectingTask1
                 throw new ArgumentException("Columns count != values count");
             }
 
-            using (SqlConnection sqlConnection = new SqlConnection())
+            using (SQLiteConnection sqlConnection = new SQLiteConnection(string.Format("Data Source={0};", dbName)))
             {
-                sqlConnection.ConnectionString = connectionString;
                 sqlConnection.Open();
 
-                SqlCommand deleteRecord = new SqlCommand();
+                SQLiteCommand deleteRecord = new SQLiteCommand();
                 deleteRecord.Connection = sqlConnection;
                 deleteRecord.CommandType = CommandType.Text;
 
